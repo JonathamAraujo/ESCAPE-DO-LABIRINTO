@@ -1,27 +1,33 @@
-from labirintos import maze, screen, move, posPlayer
-
-
-def play():
-    screen()
+from labirintos import maze, maze1, maze2, screen, move, posPlayer, mazePosAvatar
+from Menu import inicio, dificuldade 
+print(dificuldade)
+def play(MAZE):
+    mazePosAvatar()
     while True:
-        command = input("Mover (WASD ou Q para sair):").strip().lower()
+        screen(MAZE)
+        if posPlayer==MAZE[-1][7]:
+           print("Parabéns, você venceu o labirinto de nível [dificuldade]!")
+           break
+        
+        command = input("Comando: ").strip().lower()
 
         if command=="q":
            print("Saindo do jogo...")
            break
         elif command=="w":
-           move(-1,0)
+           move(-1,0,MAZE)
         elif command=="s":
-           move(1,0)
+           move(1,0,MAZE)
         elif command=="a":
-           move(0,-1)
+           move(0,-1,MAZE)
         elif command=="d":
-           move(0,1)
-        elif posPlayer==maze[-1][7]:
-           print("Parabéns, você venceu o labirinto de nível [dificuldade]!")
-           break
+           move(0,1,MAZE)
         else:
            print("ERRO! comando inválido!")
-         
-        screen()
-play()
+
+if dificuldade=="FACIL":
+   play(maze)
+elif dificuldade=="MEDIO":
+   play(maze1)
+elif dificuldade=="DIFICIL":
+   play(maze2)
