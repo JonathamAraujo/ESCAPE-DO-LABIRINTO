@@ -1,14 +1,14 @@
-from labirintos import maze, maze1, maze2, screen, move, posPlayer, mazePosAvatar
+from labirintos import maze, maze1, maze2, screen, move, posPlayer, mazePosAvatar, portais
 from Menu import inicio, dificuldade 
 print(dificuldade)
 def play(MAZE):
     mazePosAvatar()
     while True:
         screen(MAZE)
-        if posPlayer==MAZE[-1][7]:
+        print(posPlayer)
+        if MAZE[-1][7]=="@":
            print("Parabéns, você venceu o labirinto de nível [dificuldade]!")
-           break
-        
+           break  
         command = input("Comando: ").strip().lower()
 
         if command=="q":
@@ -24,6 +24,8 @@ def play(MAZE):
            move(0,1,MAZE)
         else:
            print("ERRO! comando inválido!")
+         
+        
 
 if dificuldade=="FACIL":
    play(maze)
