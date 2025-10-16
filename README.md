@@ -1,7 +1,8 @@
 # Escape-the-maze
 
 Um mini game de console desenvolvido em **Python**, como projeto da disciplina de **Matemática Aplicada à Computação**.  
-O objetivo do jogo é escapar de um labirinto representado por uma **matriz**, escolhendo a dificuldade desejada no menu inicial. O jogador deve encontrar a saída **antes de esgotar o limite de passos**.
+O objetivo do jogo é escapar de um labirinto representado por uma **matriz**, você deve usar portais, pegar chaves e abrir portas. 
+O jogador deve encontrar a saída **antes de esgotar o limite de passos**.
 
 Se o limite de passos for atingido, o jogador perde a partida. 
 
@@ -9,12 +10,11 @@ Se o limite de passos for atingido, o jogador perde a partida.
 
 ## Funcionalidades
 
-- Menu inicial com opções de dificuldade (fácil, médio, difícil).  
-- Cada dificuldade possui **labirintos pré-definidos**.  
-- Seleção aleatória de um labirinto dentre os disponíveis da dificuldade escolhida.  
+- Portais(0) te levam de um ponto a outro do labirinto(Somente uma vez).
+- Portas(/) estão trancadas, é preciso pegar as chaves(f) para abrir.  
 - Limitador de passos que define quantos movimentos o jogador pode fazer.  
-- Condição de vitória (chegar na saída dentro do tempo).  
-- Condição de derrota (tempo excedido).  
+- Condição de vitória (chegar na saída dentro da margem de passos).  
+- Condição de derrota (usar todos os passos sem sair do labirinto).  
 - Interface via console (modo texto).  
 
 ---
